@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports/charts</title> <!-- Bootstrap CSS CDN -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<body>
+   
+    <div class="container mt-10"">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="#">ITS supporting</a>
+              </div>
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="index.html">Admin</a></li>
+                <li><a href="User.html">User</a></li>
+                <li><a href="#">Reports</a></li>
+              </ul>
+            
+            </div>
+          </nav>
+        <div class="header">
+            <p>Case Report</p>
+        </div>
+        <div class="content">
+           
+            <div class="row">
+               
+                <div class="col-md-6">
+                    <div class="chart-container"> 
+                        <canvas id="financialChart"></canvas> 
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+       
+    </div> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart Script -->
+    <script> const ctx = document.getElementById('financialChart').getContext('2d'); 
+        const financialChart = new Chart(ctx, 
+        { type: 'bar', data: 
+        { labels: ['January', 'February', 'March'],
+         datasets: [{ label: 'No of Cases', 
+         data: [500, 300, 2000],
+          backgroundColor: ['#0d6efd', '#ffc107', '#198754'],
+           borderColor: ['#0d6efd', '#ffc107', '#198754'], borderWidth: 1 }] },
+            options: { scales: 
+                        { y:
+                             { beginAtZero: true } } } }); </script>
+
+</body>
+
+</html>
